@@ -8,3 +8,4 @@ Descargar plantilla de Diego.
 07/10/22
 
 - Un poco de styling en el login y en el signup.
+- Funciones de delete, modify, y el fetch hechas.
