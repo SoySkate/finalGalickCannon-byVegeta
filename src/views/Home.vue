@@ -1,13 +1,28 @@
 <template>
   <div><Nav /></div>
-  <NewTask />
+  <TaskItem
+    v-for="task in listItems"
+    :key="task.id"
+    :item="task"
+    @refreshList="listTasks"
+  />
+  <NewTask @refreshList="listTasks" />
+
   <Footer />
 </template>
 
 <script setup>
+import { ref } from "vue";
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import Footer from "../components/Footer.vue";
+import TaskItem from "../components/TaskItem.vue";
+import { useTaskStore } from "../stores/task";
+const listItems = ref([]);
+async function listTasks() {
+  listItems.value = await useTaskStore().fetchTasks();
+}
+listTasks();
 </script>
 
 <style></style>

@@ -1,15 +1,44 @@
 <template>
-  <div>Task Item Component</div>
+  <div class="card">
+    <p>{{ item.title }}</p>
+    <p>{{ item.description }}</p>
+    <input v-model="newTitle" type="text" />
+    <input v-model="newDescription" type="text" />
+    <button @click="editTask">Edit</button>
+    <button @click="deleteT">Delete Task</button>
+  </div>
 </template>
-<script setup>
-// const emit = defineEmits([
-//   ENTER-EMITS-HERE
-// ])
 
+<script setup>
+import { useTaskStore } from "../stores/task";
+import { ref } from "vue";
+
+const newTitle = ref("");
+const newDescription = ref("");
+const props = defineProps(["item"]);
+const emit = defineEmits(["refreshList"]);
+
+async function editTask() {
+  await useTaskStore().updateData(
+    newTitle.value,
+    newDescription.value,
+    props.item.id
+  );
+  emit("refreshList");
+}
+
+async function deleteT() {
+  await useTaskStore().deleteTask(props.item.id);
+  emit("refreshList");
+}
 // const props = defineProps(["ENTER-PROP-HERE"]);
 </script>
 
-<style></style>
+<style>
+.card {
+  border: 3px solid green;
+}
+</style>
 
 <!-- 
 **Hints**

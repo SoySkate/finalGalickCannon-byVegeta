@@ -1,18 +1,20 @@
 <template>
-  <div>New Task Component</div>
-  <input
-    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-    v-model="title"
-    type="text"
-  />
-  <p>{{ title }}</p>
-  <input
-    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-    v-model="description"
-    type="text"
-  />
-  <p>{{ description }}</p>
-  <button @click="edit">Change</button>
+  <div class="mx-10">
+    <div class="my-10">New Task Component</div>
+    <input
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      v-model="title"
+      type="text"
+    />
+    <p>{{ title }}</p>
+    <input
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      v-model="description"
+      type="text"
+    />
+    <p>{{ description }}</p>
+    <button class="bg-cyan-500 rounded mt-5" @click="newTask">Add Task</button>
+  </div>
 </template>
 
 <script setup>
@@ -20,10 +22,13 @@ import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
 const title = ref("");
 const description = ref("");
+const emit = defineEmits(["refreshList"]);
 
-async function edit() {
+async function newTask() {
   await useTaskStore().addTask(title.value, description.value);
+  emit("refreshList");
 }
+
 // constant to save a variable that define the custom event that will be emitted to the homeView
 
 // constant to save a variable that holds the value of the title input field of the new task

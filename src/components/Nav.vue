@@ -1,12 +1,9 @@
 <template>
   <div>
     <nav>
-      <div class="flex justify-evenly py-2 bg-orange-400">
-        <button class="bg-white rounded py-2 px-2">Home</button>
-        <button class="bg-white rounded py-2 px-2">About Us</button>
-
+      <div class="flex justify-between py-2 bg-orange-400">
         <div>
-          <button class="bg-white rounded py-2 px-2" @click="signOut">
+          <button class="bg-white rounded py-2 px-2 mx-4" @click="signOut">
             Sign Out
           </button>
           <div v-if="errorMessageContainer">
