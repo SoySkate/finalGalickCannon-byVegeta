@@ -1,8 +1,10 @@
 <template>
   <div>
-    <div class="my-4 md:font-bold lg:text-2xl">Create a New Task!</div>
+    <div class="py-4 md:font-bold lg:text-2xl underline text-white">
+      New Task:
+    </div>
     <input
-      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-4"
       placeholder="Write a Title"
       v-model="title"
       type="text"
@@ -15,7 +17,9 @@
       type="text"
     />
     <p>{{ description }}</p>
-    <button class="bg-cyan-500 rounded mt-5" @click="newTask">Add Task</button>
+    <button class="bg-cyan-500 rounded px-2 mt-5" @click="newTask">
+      Add Task
+    </button>
   </div>
 </template>
 

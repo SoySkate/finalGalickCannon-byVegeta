@@ -14,9 +14,14 @@ Descargar plantilla de Diego.
 
 - Done fucntion.
   -Quitar el input del add task una vez haga click.
-- Css a fondo titu
 
-  HACERME UN TRELLO XD:  
-  -los botones con imagenes no con words(mas guay)
-  -pop up del edit?
-  -pop up del newtask?
+11/10/22
+-pop up del edit
+-pop up del newtask
+-los botones con imagenes no con words
+
+HACERME UN TRELLO XD:
+
+- Css a fondo titu
+- desktop responsive
+  -añadir fuentes

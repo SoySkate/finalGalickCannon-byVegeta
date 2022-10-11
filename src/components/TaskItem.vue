@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :class="isDone ? 'bg-green-500' : ''">
+  <div class="card text-center" :class="isDone ? 'bg-green-500' : ''">
     <div class="my-2">
       <h1 class="font-bold underline">Title</h1>
       <p :class="isDone ? 'line-through bg-green-500' : ''">
@@ -27,16 +27,16 @@
       type="text"
     />
     <br />
-    <div class="flex justify-evenly my-4">
+    <div class="flex justify-evenly py-4">
       <button class="bg-green-500 rounded px-2" @click="doneFunction">
-        Mark As Done
+        Done✅
       </button>
       <button
         v-if="!readyForEdit"
         class="bg-blue-500 rounded px-2"
         @click="permitEdit"
       >
-        Edit
+        Edit 📝
       </button>
       <button
         v-if="readyForEdit"
@@ -45,14 +45,13 @@
       >
         Commit Changes
       </button>
-      <button class="bg-red-500 rounded px-2" @click="deleteT">
-        Delete Task
-      </button>
+      <button class="bg-red-500 rounded px-2" @click="deleteT">Delete🗑️</button>
     </div>
-    <div v-if="errorEdit" class="text-rose-700">
+    <div v-if="errorEdit" class="text-red-700 bg-white rounded">
       ¡Error! You can't edit nothing if there are no parameters in edit Inputs.
     </div>
   </div>
+  <hr class="decoration-black" />
 </template>
 
 <script setup>
@@ -72,7 +71,7 @@ async function editTask() {
     errorEdit.value = true;
     setTimeout(() => {
       errorEdit.value = false;
-    }, "5000");
+    }, "4000");
   } else if (newTitle.value === "") {
     await useTaskStore().updateDescription(newDescription.value, props.item.id);
   } else if (newDescription.value === "") {
