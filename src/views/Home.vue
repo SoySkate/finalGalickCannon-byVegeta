@@ -1,13 +1,19 @@
 <template>
-  <div><Nav /></div>
-  <TaskItem
-    v-for="task in listItems"
-    :key="task.id"
-    :item="task"
-    @refreshList="listTasks"
-  />
-  <NewTask @refreshList="listTasks" />
-
+  <Nav />
+  <div class="min-h-screen mx-2">
+    <div class="md:flex">
+      <NewTask @refreshList="listTasks" class="mb-2" />
+      <div>
+        <TaskItem
+          v-for="task in listItems"
+          :key="task.id"
+          :item="task"
+          @refreshList="listTasks"
+          class=""
+        />
+      </div>
+    </div>
+  </div>
   <Footer />
 </template>
 

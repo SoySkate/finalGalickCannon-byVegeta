@@ -1,14 +1,16 @@
 <template>
-  <div class="mx-10">
-    <div class="my-10">New Task Component</div>
+  <div>
+    <div class="my-4 md:font-bold lg:text-2xl">Create a New Task!</div>
     <input
       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      placeholder="Write a Title"
       v-model="title"
       type="text"
     />
     <p>{{ title }}</p>
     <input
       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      placeholder="Write a Description"
       v-model="description"
       type="text"
     />
@@ -26,6 +28,8 @@ const emit = defineEmits(["refreshList"]);
 
 async function newTask() {
   await useTaskStore().addTask(title.value, description.value);
+  title.value = "";
+  description.value = "";
   emit("refreshList");
 }
 

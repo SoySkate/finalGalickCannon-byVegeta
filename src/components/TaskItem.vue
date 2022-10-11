@@ -1,11 +1,57 @@
 <template>
-  <div class="card">
-    <p>{{ item.title }}</p>
-    <p>{{ item.description }}</p>
-    <input v-model="newTitle" type="text" />
-    <input v-model="newDescription" type="text" />
-    <button @click="editTask">Edit</button>
-    <button @click="deleteT">Delete Task</button>
+  <div class="card" :class="isDone ? 'bg-green-500' : ''">
+    <div class="my-2">
+      <h1 class="font-bold underline">Title</h1>
+      <p :class="isDone ? 'line-through bg-green-500' : ''">
+        {{ item.title }}
+      </p>
+    </div>
+    <div class="mb-2">
+      <h2 class="font-semibold underline">Description</h2>
+      <p :class="isDone ? 'line-through bg-green-500' : ''">
+        {{ item.description }}
+      </p>
+    </div>
+    <input
+      v-if="readyForEdit"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      placeholder="Write a new Title"
+      v-model="newTitle"
+      type="text"
+    />
+    <input
+      v-if="readyForEdit"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      placeholder="Write a new Description"
+      v-model="newDescription"
+      type="text"
+    />
+    <br />
+    <div class="flex justify-evenly my-4">
+      <button class="bg-green-500 rounded px-2" @click="doneFunction">
+        Mark As Done
+      </button>
+      <button
+        v-if="!readyForEdit"
+        class="bg-blue-500 rounded px-2"
+        @click="permitEdit"
+      >
+        Edit
+      </button>
+      <button
+        v-if="readyForEdit"
+        class="bg-blue-500 rounded px-2"
+        @click="editTask"
+      >
+        Commit Changes
+      </button>
+      <button class="bg-red-500 rounded px-2" @click="deleteT">
+        Delete Task
+      </button>
+    </div>
+    <div v-if="errorEdit" class="text-rose-700">
+      ¡Error! You can't edit nothing if there are no parameters in edit Inputs.
+    </div>
   </div>
 </template>
 
@@ -13,32 +59,54 @@
 import { useTaskStore } from "../stores/task";
 import { ref } from "vue";
 
+const isDone = ref(false);
 const newTitle = ref("");
 const newDescription = ref("");
 const props = defineProps(["item"]);
 const emit = defineEmits(["refreshList"]);
+const errorEdit = ref(false);
+const readyForEdit = ref(false);
 
 async function editTask() {
-  await useTaskStore().updateData(
-    newTitle.value,
-    newDescription.value,
-    props.item.id
-  );
+  if (newTitle.value === "" && newDescription.value === "") {
+    errorEdit.value = true;
+    setTimeout(() => {
+      errorEdit.value = false;
+    }, "5000");
+  } else if (newTitle.value === "") {
+    await useTaskStore().updateDescription(newDescription.value, props.item.id);
+  } else if (newDescription.value === "") {
+    await useTaskStore().updateTitle(newTitle.value, props.item.id);
+  } else {
+    await useTaskStore().updateData(
+      newTitle.value,
+      newDescription.value,
+      props.item.id
+    );
+  }
   emit("refreshList");
+  newTitle.value = "";
+  newDescription.value = "";
+  readyForEdit.value = false;
 }
 
 async function deleteT() {
   await useTaskStore().deleteTask(props.item.id);
   emit("refreshList");
 }
+
+const doneFunction = () => {
+  isDone.value = !isDone.value;
+  console.log(isDone);
+};
+
+function permitEdit() {
+  readyForEdit.value = true;
+}
 // const props = defineProps(["ENTER-PROP-HERE"]);
 </script>
 
-<style>
-.card {
-  border: 3px solid green;
-}
-</style>
+<style></style>
 
 <!-- 
 **Hints**
