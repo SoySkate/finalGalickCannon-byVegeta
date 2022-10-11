@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[url('../../public/normalmida.jpg')] min-h-screen">
+  <div class="bg-[url('/normalmida.jpg')] min-h-screen">
     <div class="flex justify-center items-center pt-32">
       <div class="w-full max-w-xs">
         <p>
