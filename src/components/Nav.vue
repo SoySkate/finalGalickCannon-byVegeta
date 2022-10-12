@@ -1,9 +1,12 @@
 <template>
   <div>
-    <nav>
-      <div class="flex justify-between py-2 bg-orange-400">
+    <nav class="mb-4">
+      <div class="flex justify-between py-2 bg-[#F2CB05]">
         <div>
-          <button class="bg-white rounded py-2 px-2 mx-4" @click="signOut">
+          <button
+            class="bg-white rounded py-2 px-2 mx-4 border-2 border-white hover:border-white hover:bg-black hover:text-white"
+            @click="signOut"
+          >
             Sign Out
           </button>
           <div v-if="errorMessageContainer">

@@ -1,23 +1,24 @@
 <template>
-  <div>
-    <div class="py-4 md:font-bold lg:text-2xl underline text-white">
-      New Task:
-    </div>
+  <div class="bg-[#F2D5C4] rounded-2xl pb-2 lg:w-80 lg:h-80">
+    <div class="py-4 md:font-bold lg:text-2xl text-black">New Tasks</div>
     <input
-      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-4"
+      class="rounded border-gray-400 lg:w-60 border-2 mb-1"
       placeholder="Write a Title"
       v-model="title"
       type="text"
     />
-    <p>{{ title }}</p>
-    <input
-      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+
+    <textarea
+      class="rounded border-gray-400 lg:w-60 lg:h-40 border-2"
       placeholder="Write a Description"
       v-model="description"
       type="text"
     />
-    <p>{{ description }}</p>
-    <button class="bg-cyan-500 rounded px-2 mt-5" @click="newTask">
+    <br />
+    <button
+      class="bg-[#078C03] rounded px-2 mt-5 text-white transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300"
+      @click="newTask"
+    >
       Add Task
     </button>
   </div>

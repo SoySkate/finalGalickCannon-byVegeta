@@ -19,9 +19,18 @@ Descargar plantilla de Diego.
 -pop up del edit
 -pop up del newtask
 -los botones con imagenes no con words
+-treure lo de sota del input quan escric que es repeteix a sota
+
+12/10/22
+-input millor un text area
+
+-
 
 HACERME UN TRELLO XD:
+-canviar lo del desktop los p<>
 
-- Css a fondo titu
 - desktop responsive
-  -añadir fuentes
+  -añadir fuentes: fuente de (la importada)
+  -inputs negres dun altre color:addtask,blanc, edit border task blue.
+  -bg new task color:
+  -navbar change it is a fking shitttt xd

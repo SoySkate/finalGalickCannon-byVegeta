@@ -1,64 +1,80 @@
 <template>
-  <div class="card text-center" :class="isDone ? 'bg-green-500' : ''">
+  <div
+    class="card text-center bg-slate-200 border-4 my-4 rounded-2xl"
+    :class="[
+      item.is_complete ? 'border border-green-500' : '',
+      readyForEdit ? 'border border-blue-500' : '',
+    ]"
+  >
     <div class="my-2">
-      <h1 class="font-bold underline">Title</h1>
-      <p :class="isDone ? 'line-through bg-green-500' : ''">
-        {{ item.title }}
-      </p>
-    </div>
-    <div class="mb-2">
-      <h2 class="font-semibold underline">Description</h2>
-      <p :class="isDone ? 'line-through bg-green-500' : ''">
-        {{ item.description }}
+      <h1 class="font-bold underline" @click="permitEdit">Title</h1>
+      <p :class="item.is_complete ? 'line-through' : ''">
+        {{ item.title }} {{ item.is_complete }}
       </p>
     </div>
     <input
       v-if="readyForEdit"
-      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      class="bg-gray-50 mb-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
       placeholder="Write a new Title"
       v-model="newTitle"
       type="text"
     />
-    <input
+    <div class="mb-2">
+      <h2 class="font-semibold underline">Description</h2>
+      <p :class="isClicked ? 'line-through ' : ''">
+        {{ item.description }}
+      </p>
+    </div>
+
+    <textarea
       v-if="readyForEdit"
       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
       placeholder="Write a new Description"
       v-model="newDescription"
       type="text"
     />
+
     <br />
     <div class="flex justify-evenly py-4">
-      <button class="bg-green-500 rounded px-2" @click="doneFunction">
+      <button
+        class="rounded hover:bg-[#078C03] hover:text-white px-2"
+        :class="isClicked ? 'bg-[#078C03] text-white hover:bg-green-800' : ''"
+        @click="completeTask"
+      >
         Done✅
       </button>
       <button
         v-if="!readyForEdit"
-        class="bg-blue-500 rounded px-2"
+        class="hover:bg-[#034AA6] rounded px-2 hover:text-white"
         @click="permitEdit"
       >
         Edit 📝
       </button>
       <button
         v-if="readyForEdit"
-        class="bg-blue-500 rounded px-2"
+        class="bg-[#034AA6] rounded px-2 text-white border-2 hover:border-black"
         @click="editTask"
       >
         Commit Changes
       </button>
-      <button class="bg-red-500 rounded px-2" @click="deleteT">Delete🗑️</button>
+      <button
+        class="hover:bg-[#A60303] rounded px-2 hover:text-white"
+        @click="deleteT"
+      >
+        Delete🗑️
+      </button>
     </div>
     <div v-if="errorEdit" class="text-red-700 bg-white rounded">
       ¡Error! You can't edit nothing if there are no parameters in edit Inputs.
     </div>
   </div>
-  <hr class="decoration-black" />
 </template>
 
 <script setup>
 import { useTaskStore } from "../stores/task";
 import { ref } from "vue";
 
-const isDone = ref(false);
+const isClicked = ref(null);
 const newTitle = ref("");
 const newDescription = ref("");
 const props = defineProps(["item"]);
@@ -83,7 +99,7 @@ async function editTask() {
       props.item.id
     );
   }
-  emit("refreshList");
+  emit("refreshList", "¨completeChild");
   newTitle.value = "";
   newDescription.value = "";
   readyForEdit.value = false;
@@ -94,13 +110,21 @@ async function deleteT() {
   emit("refreshList");
 }
 
-const doneFunction = () => {
-  isDone.value = !isDone.value;
-  console.log(isDone);
+const clickFunction = (color) => {
+  if (isClicked.value && isClicked.value === color) {
+    return (isClicked.value = null);
+  }
+  isClicked.value = color;
+};
+
+const completeTask = () => {
+  emit("completeChild", props.item);
+  console.log(props.item);
 };
 
 function permitEdit() {
   readyForEdit.value = true;
+  clickFunction("#034AA6");
 }
 // const props = defineProps(["ENTER-PROP-HERE"]);
 </script>

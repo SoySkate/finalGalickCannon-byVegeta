@@ -1,22 +1,23 @@
 <template>
   <Nav />
   <div class="min-h-screen">
-    <div class="md:flex md:justify-evenly">
-      <div class="sticky top-0 bg-slate-500 text-center rounded h-30 w-52 md:">
+    <div class="md:flex md:justify-between md:px-8">
+      <div class="sticky top-0 text-center rounded-2xl h-12 w-52 bg-white">
         <NewTask v-if="taskButton" @refreshList="listTasks" class="mb-2" />
         <button
           @click="taskButton = !taskButton"
-          class="bg-orange-500 rounded px-2 my-2 md:hidden"
+          class="bg-orange-500 rounded-xl px-4 mt-2 py-1 md:hidden"
         >
           Create a New Task ! ! !
         </button>
       </div>
-      <div>
+      <div class="w-1/2 flex justify-center flex-col">
         <TaskItem
           v-for="task in listItems"
           :key="task.id"
           :item="task"
           @refreshList="listTasks"
+          @completeChild="completeTask"
         />
       </div>
     </div>
@@ -48,6 +49,17 @@ function prueba() {
   }
 }
 prueba();
+
+//definicion de nuestra tienda en una variable para que sea mas facil de usar(mas leible)
+let taskStore = useTaskStore();
+
+// funcion para completar tarea conectandose a supabase
+async function completeTask(task) {
+  let boolean = !task.is_complete;
+  let id = task.id;
+  await taskStore.completeTask(boolean, id);
+  listTasks();
+}
 </script>
 
 <style></style>
