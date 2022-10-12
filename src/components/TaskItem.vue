@@ -9,7 +9,7 @@
     <div class="my-2">
       <h1 class="font-bold underline" @click="permitEdit">Title</h1>
       <p :class="item.is_complete ? 'line-through' : ''">
-        {{ item.title }} {{ item.is_complete }}
+        {{ item.title }}
       </p>
     </div>
     <input

@@ -1,6 +1,8 @@
 <template>
   <div class="bg-[#F2D5C4] rounded-2xl pb-2 lg:w-80 lg:h-80">
-    <div class="py-4 md:font-bold lg:text-2xl text-black">New Tasks</div>
+    <div class="py-4 md:font-bold lg:text-2xl text-black">
+      New MARIA ES UNA GUARRA TASK
+    </div>
     <input
       class="rounded border-gray-400 lg:w-60 border-2 mb-1"
       placeholder="Write a Title"
