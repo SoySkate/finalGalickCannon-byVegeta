@@ -2,7 +2,7 @@
   <div
     class="card text-center bg-white border my-4 rounded-2xl"
     :class="[
-      item.is_complete ? 'border border-green-500' : '',
+      item.is_complete ? 'border-4 border-green-500' : '',
       readyForEdit ? 'border border-blue-500' : '',
     ]"
   >
@@ -64,7 +64,7 @@
         Delete🗑️
       </button>
     </div>
-    <div v-if="errorEdit" class="text-red-700 bg-white rounded">
+    <div v-if="errorEdit" class="text-red-700 rounded-xl bg-white">
       ¡Error! You can't edit nothing if there are no parameters in edit Inputs.
     </div>
   </div>

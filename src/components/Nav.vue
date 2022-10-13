@@ -2,17 +2,20 @@
   <div>
     <nav class="mb-4">
       <div class="flex justify-between py-2 bg-[#354733]">
-        <div class="flex text-center justify-between">
-          <h1>MARIAAA</h1>
-          <button
-            class="bg-white rounded py-2 px-2 mx-4 border border-slate-200 hover:border-white hover:bg-black hover:text-white"
-            @click="signOut"
-          >
-            Sign Out
-          </button>
-          <div v-if="errorMessageContainer">
-            <p>{{ errorMessage }}</p>
-          </div>
+        <img
+          class="ml-2 lg:ml-8 w-20 h-12"
+          src="../../public/todo.png"
+          alt=""
+        />
+        <button
+          class="mr-2 lg:mr-8 bg-white rounded-full py-2 px-4 mx-4 border border-slate-200 hover:bg-[#D8DBCC]"
+          @click="signOut"
+        >
+          Sign Out
+        </button>
+
+        <div v-if="errorMessageContainer">
+          <p>{{ errorMessage }}</p>
         </div>
       </div>
     </nav>

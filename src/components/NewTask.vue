@@ -16,7 +16,7 @@
     />
     <br />
     <button
-      class="bg-black rounded px-8 py-2 mt-5 text-white transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300"
+      class="bg-[#354733] rounded px-8 py-2 mt-5 text-white transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#1D261B] duration-300"
       @click="newTask"
     >
       Add Task
