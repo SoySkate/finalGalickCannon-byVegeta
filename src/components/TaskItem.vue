@@ -3,7 +3,7 @@
     class="card text-center bg-white border my-4 rounded-2xl"
     :class="[
       item.is_complete ? 'border-4 border-green-500' : '',
-      readyForEdit ? 'border border-blue-500' : '',
+      readyForEdit ? 'border-4 border-blue-500' : '',
     ]"
   >
     <div class="mb-2 mt-4">
@@ -35,13 +35,13 @@
     />
 
     <br />
+
     <div class="flex justify-evenly gap-1 py-4">
       <button
-        class="rounded hover:bg-[#078C03] hover:text-white py-1 border px-6 border-black"
-        :class="item.is_complete ? 'bg-[#078C03] text-white ' : ''"
-        @click="completeTask"
+        class="hover:bg-[#A60303] rounded px-2 hover:text-white py-1 border px-6 border-black"
+        @click="deleteT"
       >
-        Done✅
+        Delete 🗑️
       </button>
       <button
         v-if="!readyForEdit"
@@ -57,11 +57,13 @@
       >
         Commit Changes
       </button>
+
       <button
-        class="hover:bg-[#A60303] rounded px-2 hover:text-white py-1 border px-6 border-black"
-        @click="deleteT"
+        class="rounded hover:bg-[#078C03] hover:text-white py-1 border px-6 border-black"
+        :class="item.is_complete ? 'bg-[#078C03] text-white ' : ''"
+        @click="completeTask"
       >
-        Delete🗑️
+        Done ✅
       </button>
     </div>
     <div v-if="errorEdit" class="text-red-700 rounded-xl bg-white">

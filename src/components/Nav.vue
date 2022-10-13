@@ -5,7 +5,7 @@
         <img
           class="ml-2 lg:ml-8 w-20 h-12"
           src="../../public/todo.png"
-          alt=""
+          alt="Logo To Do"
         />
         <button
           class="mr-2 lg:mr-8 bg-white rounded-full py-2 px-4 mx-4 border border-slate-200 hover:bg-[#D8DBCC]"

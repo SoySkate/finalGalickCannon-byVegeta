@@ -33,9 +33,15 @@ Descargar plantilla de Diego.
 -canviar lo del desktop los p<>
 -inputs negres dun altre color:addtask,blanc, edit border task blue.
 -al darle a done el color del boton se quede verde
+-navbar change it is a fking shitttt + logo
+-bg new task color
+-responsive arreglarlo xd
+-NewTask addtask button inside div, textarea description areglar.
+-in movile when I click in add task close newtask div
+-done, deixarho abaix.
 
 - HACERME UN TRELLO XD:
-  -in movile when I click in add task close newtask div
-  -bg new task color
-  -responsive arreglarlo xd
-  -navbar change it is a fking shitttt + logo
+  -forget you password???-----
+  -inputs deixarlos bé.
+  - orange button areglar el margin top random
+    -canviar el title y el description de les cards.

@@ -1,7 +1,7 @@
 <template>
-  <footer class="w-full bg-[#8A9B6E]">
+  <footer class="w-full pb-4 bg-[#8A9B6E]">
     <div class="container mx-auto px-4">
-      <hr class="mb-6 border-b-1 border-gray-700" />
+      <hr class="mb-6 border border-[#8A9B6E]" />
       <div
         class="flex flex-wrap items-center md:justify-between justify-center"
       >

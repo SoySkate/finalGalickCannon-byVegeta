@@ -1,22 +1,47 @@
 <template>
-  <div class="bg-[#8A9B6E] rounded-2xl lg:w-80 lg:h-80">
-    <div class="py-4 md:font-bold lg:text-2xl text-black mt-12">New Task</div>
+  <button
+    v-if="!taskButton"
+    @click="taskButton = !taskButton"
+    class="bg-[#E89A54] rounded-xl px-4 py-1 mt-4 md:hidden"
+  >
+    Create a New Task ! ! !
+  </button>
+  <div
+    v-else
+    class="bg-[#8A9B6E] rounded-2xl lg:w-80 mx-4 lg:h-auto justify-center"
+  >
+    <div class="flex lg:justify-center justify-between">
+      <div class="ml-14 lg:ml-0"></div>
+      <div
+        class="pb-8 pt-4 text-2xl md:font-bold lg:text-2xl text-black lg:mt-12"
+      >
+        New Task
+      </div>
+      <button
+        v-if="!desktopView"
+        @click="taskButton = !taskButton"
+        class="mr-10"
+      >
+        ❌​
+      </button>
+    </div>
     <input
-      class="rounded border-gray-300 lg:w-60 border-1 mb-1"
+      class="rounded-md placeholder:pl-4 placeholder:italic border-gray-300 w-72 h-16 lg:w-60 border-1"
       placeholder="Write a Title"
       v-model="title"
       type="text"
     />
+    <br />
 
     <textarea
-      class="rounded border-gray-300 lg:w-60 lg:h-40 border-1"
+      class="rounded-md placeholder:pl-4 placeholder:italic placeholder:pt-4 border-gray-300 w-72 h-32 lg:w-60 lg:h-40 border-1 mt-4"
       placeholder="Write a Description"
       v-model="description"
       type="text"
     />
     <br />
     <button
-      class="bg-[#354733] rounded px-8 py-2 mt-5 text-white transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#1D261B] duration-300"
+      class="bg-[#354733] rounded mb-6 px-8 py-2 mt-5 text-white transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#1D261B] duration-300"
       @click="newTask"
     >
       Add Task
@@ -30,13 +55,33 @@ import { useTaskStore } from "../stores/task";
 const title = ref("");
 const description = ref("");
 const emit = defineEmits(["refreshList"]);
+const taskButton = ref(false);
+const desktopView = ref(false);
 
 async function newTask() {
   await useTaskStore().addTask(title.value, description.value);
   title.value = "";
   description.value = "";
   emit("refreshList");
+  if (window.innerWidth < 500) {
+    taskButton.value = false;
+  }
 }
+function prueba() {
+  console.log(window.innerWidth);
+  if (window.innerWidth > 500) {
+    taskButton.value = true;
+    desktopView.value = true;
+  } else if (window.innerWidth < 500) {
+    taskButton.value = false;
+    desktopView.value = false;
+  }
+}
+prueba();
+
+window.addEventListener("resize", () => {
+  prueba();
+});
 
 // constant to save a variable that define the custom event that will be emitted to the homeView
 

@@ -1,15 +1,15 @@
 <template>
-  <div class="bg-[url('/anashei.jpg')] min-h-screen">
+  <div class="bg-[url('/blat.jpg')] min-h-screen">
     <div class="flex justify-center items-center pt-32">
       <div class="w-full max-w-xs">
         <form
           @submit.prevent="signUp"
-          class="bg-cyan-200 shadow-2xl rounded px-8 pt-6 pb-8 mb-4"
+          class="bg-[#8A9B6E] shadow-2xl rounded-2xl px-8 pt-6 pb-8 mb-4"
         >
           <div class="identity-input mb-4">
             <label
               for="identity"
-              class="block text-gray-700 text-sm font-bold mb-2"
+              class="block text-black text-sm font-bold mb-2"
             >
               Email</label
             >
@@ -27,7 +27,7 @@
           <div class="password-input mb-6">
             <label
               for="identity"
-              class="block text-gray-700 text-sm font-bold mb-2"
+              class="block text-black text-sm font-bold mb-2"
               >Password</label
             >
             <input
@@ -42,7 +42,7 @@
           <div class="password-input mb-6">
             <label
               for="identity"
-              class="block text-gray-700 text-sm font-bold mb-2"
+              class="block text-black text-sm font-bold mb-2"
               >Confirm Password</label
             >
             <input
@@ -53,15 +53,15 @@
               id="confirmPassword"
             />
           </div>
-          <div class="flex items-center justify-between">
+          <div class="flex justify-center justify-evenly">
             <button
-              class="bg-blue-600 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              class="bg-[#354733] hover:bg-[#1D261B] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-6"
               type="submit"
             >
-              Sign Up
+              Sign up
             </button>
             <PersonalRouter
-              class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+              class="inline-block align-baseline font-bold text-sm mt-2 text-back text-lg hover:text-[#354733]"
               :route="route"
               :buttonText="buttonText"
             />
@@ -80,7 +80,7 @@ import { useUserStore } from "../stores/user";
 
 // Route Variables
 const route = "/auth/login";
-const buttonText = "Sign In Route ;)";
+const buttonText = "Sign in";
 
 // Input Fields
 const email = ref(null);
