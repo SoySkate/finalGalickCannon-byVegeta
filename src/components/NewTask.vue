@@ -1,24 +1,22 @@
 <template>
-  <div class="bg-[#F2D5C4] rounded-2xl pb-2 lg:w-80 lg:h-80">
-    <div class="py-4 md:font-bold lg:text-2xl text-black">
-      New MARIA ES UNA GUARRA TASK
-    </div>
+  <div class="bg-[#8A9B6E] rounded-2xl lg:w-80 lg:h-80">
+    <div class="py-4 md:font-bold lg:text-2xl text-black mt-12">New Task</div>
     <input
-      class="rounded border-gray-400 lg:w-60 border-2 mb-1"
+      class="rounded border-gray-300 lg:w-60 border-1 mb-1"
       placeholder="Write a Title"
       v-model="title"
       type="text"
     />
 
     <textarea
-      class="rounded border-gray-400 lg:w-60 lg:h-40 border-2"
+      class="rounded border-gray-300 lg:w-60 lg:h-40 border-1"
       placeholder="Write a Description"
       v-model="description"
       type="text"
     />
     <br />
     <button
-      class="bg-[#078C03] rounded px-2 mt-5 text-white transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300"
+      class="bg-black rounded px-8 py-2 mt-5 text-white transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300"
       @click="newTask"
     >
       Add Task

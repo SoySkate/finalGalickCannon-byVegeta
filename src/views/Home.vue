@@ -1,24 +1,28 @@
 <template>
-  <Nav />
-  <div class="min-h-screen">
-    <div class="md:flex md:justify-between md:px-8">
-      <div class="sticky top-0 text-center rounded-2xl h-12 w-52 bg-white">
-        <NewTask v-if="taskButton" @refreshList="listTasks" class="mb-2" />
-        <button
-          @click="taskButton = !taskButton"
-          class="bg-orange-500 rounded-xl px-4 mt-2 py-1 md:hidden"
+  <div class="bg-[#F2F0EB]">
+    <Nav class="sticky top-0" />
+    <div class="min-h-screen">
+      <div class="md:flex md:justify-between md:px-8">
+        <div
+          class="sticky top-16 text-center rounded-2xl h-12 w-52 bg-[#F2F0EB]"
         >
-          Create a New Task ! ! !
-        </button>
-      </div>
-      <div class="w-1/2 flex justify-center flex-col">
-        <TaskItem
-          v-for="task in listItems"
-          :key="task.id"
-          :item="task"
-          @refreshList="listTasks"
-          @completeChild="completeTask"
-        />
+          <NewTask v-if="taskButton" @refreshList="listTasks" class="mb-2" />
+          <button
+            @click="taskButton = !taskButton"
+            class="bg-orange-500 rounded-xl px-4 mt-2 py-1 md:hidden"
+          >
+            Create a New Task ! ! !
+          </button>
+        </div>
+        <div class="w-1/2 flex justify-center flex-col">
+          <TaskItem
+            v-for="task in listItems"
+            :key="task.id"
+            :item="task"
+            @refreshList="listTasks"
+            @completeChild="completeTask"
+          />
+        </div>
       </div>
     </div>
   </div>

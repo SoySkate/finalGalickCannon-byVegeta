@@ -1,10 +1,11 @@
 <template>
   <div>
     <nav class="mb-4">
-      <div class="flex justify-between py-2 bg-[#F2CB05]">
-        <div>
+      <div class="flex justify-between py-2 bg-[#354733]">
+        <div class="flex text-center justify-between">
+          <h1>MARIAAA</h1>
           <button
-            class="bg-white rounded py-2 px-2 mx-4 border-2 border-white hover:border-white hover:bg-black hover:text-white"
+            class="bg-white rounded py-2 px-2 mx-4 border border-slate-200 hover:border-white hover:bg-black hover:text-white"
             @click="signOut"
           >
             Sign Out
