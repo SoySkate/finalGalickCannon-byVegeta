@@ -6,21 +6,21 @@
       readyForEdit ? 'border-4 border-blue-500' : '',
     ]"
   >
-    <div class="mb-2 mt-4">
-      <h1 class="font-bold underline" @click="permitEdit">Title</h1>
+    <div class="mb-4 mt-4">
+      <h1 class="font-bold" @click="permitEdit">TITLE</h1>
       <p :class="item.is_complete ? 'line-through' : ''" class="break-words">
         {{ item.title }}
       </p>
     </div>
     <input
       v-if="readyForEdit"
-      class="rounded-md border-gray-300 lg:w-60 border-2 mb-1"
+      class="rounded-md border-gray-300 placeholder:pl-2 px-2 lg:w-60 border mb-1"
       placeholder="Write a new Title"
       v-model="newTitle"
       type="text"
     />
     <div class="mb-2">
-      <h2 class="font-semibold underline">Description</h2>
+      <h2 class="font-semibold">DESCRIPTION</h2>
       <p :class="item.is_complete ? 'line-through ' : ''" class="break-words">
         {{ item.description }}
       </p>
@@ -28,7 +28,7 @@
 
     <textarea
       v-if="readyForEdit"
-      class="rounded-md border-gray-300 lg:w-60 border-2 mb-1"
+      class="rounded-md border-gray-300 placeholder:pl-2 px-2 lg:w-60 border mb-1"
       placeholder="Write a new Description"
       v-model="newDescription"
       type="text"

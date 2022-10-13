@@ -2,13 +2,13 @@
   <div class="bg-[#F2F0EB]">
     <Nav class="sticky top-0" />
     <div class="min-h-screen">
-      <div class="md:flex md:justify-between md:px-8">
+      <div class="md:flex md:justify-evenly md:px-8">
         <div
-          class="sticky top-16 lg:top-24 text-center rounded-2xl h-16 w-full bg-[#F2F0EB]"
+          class="sticky top-16 lg:top-24 md:top-22 text-center rounded-md h-16 w-full bg-[#F2F0EB]"
         >
           <NewTask @refreshList="listTasks" class="mb-2" />
         </div>
-        <div class="lg:w-1/2 flex justify-center flex-col">
+        <div class="flex-col">
           <TaskItem
             v-for="task in uncompleteItems"
             :key="task.id"
@@ -16,13 +16,15 @@
             @refreshList="listTasks"
             @completeChild="completeTask"
           />
-          <TaskItem
-            v-for="task in completeItems"
-            :key="task.id"
-            :item="task"
-            @refreshList="listTasks"
-            @completeChild="completeTask"
-          />
+          <div class="">
+            <TaskItem
+              v-for="task in completeItems"
+              :key="task.id"
+              :item="task"
+              @refreshList="listTasks"
+              @completeChild="completeTask"
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -39,9 +39,15 @@ Descargar plantilla de Diego.
 -NewTask addtask button inside div, textarea description areglar.
 -in movile when I click in add task close newtask div
 -done, deixarho abaix.
+-canviar el title y el description de les cards: sense subratllat i majúscules.
+-inputs deixarlos bé.
+-orange button!! calltoaction(CTA) arreglar el margin top random
+-boto de create a new task que sigui igual que el add Task amb un icono de +.
 
 - HACERME UN TRELLO XD:
+
+  -footer areglar
+  -DESKROP FLEX QUE BERGA
+  -Finalment canviar les mesures de mitja mida(md:10px) SI HAY TIEMPO
+  -done tasks button? rollo para scrollear directo hasta las que ya estan hechas?
   -forget you password???-----
-  -inputs deixarlos bé.
-  - orange button areglar el margin top random
-    -canviar el title y el description de les cards.

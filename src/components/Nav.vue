@@ -8,7 +8,7 @@
           alt="Logo To Do"
         />
         <button
-          class="mr-2 lg:mr-8 bg-white rounded-full py-2 px-4 mx-4 border border-slate-200 hover:bg-[#D8DBCC]"
+          class="mr-2 lg:mr-8 bg-white rounded-md py-2 px-4 mx-4 border border-slate-200 hover:bg-[#D8DBCC]"
           @click="signOut"
         >
           Sign Out

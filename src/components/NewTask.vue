@@ -2,9 +2,9 @@
   <button
     v-if="!taskButton"
     @click="taskButton = !taskButton"
-    class="bg-[#E89A54] rounded-xl px-4 py-1 mt-4 md:hidden"
+    class="bg-[#E89A54] rounded-md px-8 py-1 mt-5 md:hidden text-black transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-orange-500 duration-300"
   >
-    Create a New Task ! ! !
+    + Add Task
   </button>
   <div
     v-else
@@ -13,14 +13,14 @@
     <div class="flex lg:justify-center justify-between">
       <div class="ml-14 lg:ml-0"></div>
       <div
-        class="pb-8 pt-4 text-2xl md:font-bold lg:text-2xl text-black lg:mt-12"
+        class="pb-8 pt-4 lg:pt-1 text-2xl md:font-bold lg:text-2xl text-black lg:mt-12"
       >
         New Task
       </div>
       <button
         v-if="!desktopView"
         @click="taskButton = !taskButton"
-        class="mr-10"
+        class="mr-8 mb-6"
       >
         ❌​
       </button>
@@ -41,10 +41,10 @@
     />
     <br />
     <button
-      class="bg-[#354733] rounded mb-6 px-8 py-2 mt-5 text-white transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#1D261B] duration-300"
+      class="bg-[#E89A54] rounded-md mb-6 px-8 py-2 mt-5 text-black transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-orange-500 duration-300"
       @click="newTask"
     >
-      Add Task
+      + Add Task
     </button>
   </div>
 </template>
