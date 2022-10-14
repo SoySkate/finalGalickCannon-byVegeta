@@ -11,7 +11,7 @@
             <a
               href="https://github.com/SoySkate"
               class="text-white hover:text-gray-800 text-sm font-semibold"
-              >Creative Tim</a
+              >Build by SoySkate</a
             >
           </div>
         </div>
@@ -21,26 +21,26 @@
               <a
                 href="https://github.com/SoySkate"
                 class="text-white hover:text-gray-800 text-sm font-semibold block py-1 px-3"
-                >Creative Tim</a
+                >SoySkate</a
               >
             </li>
             <li>
               <a
-                href="https://github.com/SoySkate"
+                href="https://www.youtube.com/watch?v=I5zSU56yOzU"
                 class="text-white hover:text-gray-800 text-sm font-semibold block py-1 px-3"
                 >About Us</a
               >
             </li>
             <li>
               <a
-                href="https://github.com/SoySkate"
+                href="https://www.microsiervos.com/archivo/general/lorem-ipsum-estrenando-blog.html"
                 class="text-white hover:text-gray-800 text-sm font-semibold block py-1 px-3"
                 >Blog</a
               >
             </li>
             <li>
               <a
-                href="https://github.com/SoySkate"
+                href="https://choosealicense.com/licenses/mit/"
                 class="text-white hover:text-gray-800 text-sm font-semibold block py-1 px-3"
                 >MIT License</a
               >
