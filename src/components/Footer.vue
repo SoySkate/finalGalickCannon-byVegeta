@@ -1,5 +1,5 @@
 <template>
-  <footer class="w-full pb-3 bg-[#8A9B6E]">
+  <footer class="w-full pb-3 mt-4 bg-[#8A9B6E]">
     <div class="container mx-auto px-4">
       <hr class="mb-6 border border-[#8A9B6E]" />
       <div

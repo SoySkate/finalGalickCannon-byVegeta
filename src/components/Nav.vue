@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="">
+    <nav class="mb-4">
       <div class="flex justify-between py-2 bg-[#354733]">
         <img
           class="ml-2 lg:ml-16 w-20 h-12"
