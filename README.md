@@ -43,11 +43,12 @@ Descargar plantilla de Diego.
 -inputs deixarlos bé.
 -orange button!! calltoaction(CTA) arreglar el margin top random
 -boto de create a new task que sigui igual que el add Task amb un icono de +.
+-DESKROP FLEX QUE BERGA
+-Finalment canviar les mesures de mitja mida(md:10px) SI HAY TIEMPO aprox bien xd
 
 - HACERME UN TRELLO XD:
 
   -footer areglar
-  -DESKROP FLEX QUE BERGA
-  -Finalment canviar les mesures de mitja mida(md:10px) SI HAY TIEMPO
+  -posar un mini espai entre navbar y el newtask sin que se vaya a la mierda el movile responsive.
   -done tasks button? rollo para scrollear directo hasta las que ya estan hechas?
-  -forget you password???-----
+  -forget you password???--

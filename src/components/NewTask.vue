@@ -8,12 +8,14 @@
   </button>
   <div
     v-else
-    class="bg-[#8A9B6E] rounded-2xl lg:w-80 mx-4 lg:h-auto justify-center"
+    class="bg-[#8A9B6E] rounded-2xl md:w-80 lg:w-80 mx-4 lg:h-auto justify-center"
   >
-    <div class="flex lg:justify-center justify-between">
-      <div class="ml-14 lg:ml-0"></div>
+    <div
+      class="flex lg:justify-center sm:justify-center md:justify-center justify-between"
+    >
+      <div class="ml-14 md:ml-0 md:mt-10 sm:ml-0 sm:mt-10 lg:ml-0"></div>
       <div
-        class="pb-8 pt-4 lg:pt-1 text-2xl md:font-bold lg:text-2xl text-black lg:mt-12"
+        class="pb-8 pt-4 lg:pt-1 sm:font-bold text-2xl md:font-bold lg:text-2xl text-black lg:mt-12"
       >
         New Task
       </div>
@@ -26,7 +28,7 @@
       </button>
     </div>
     <input
-      class="rounded-md placeholder:pl-4 placeholder:italic border-gray-300 w-72 h-16 lg:w-60 border-1"
+      class="rounded-md px-2 mx-2 placeholder:italic border-gray-300 w-72 h-16 lg:w-60 border-1"
       placeholder="Write a Title"
       v-model="title"
       type="text"
@@ -34,7 +36,7 @@
     <br />
 
     <textarea
-      class="rounded-md placeholder:pl-4 placeholder:italic placeholder:pt-4 border-gray-300 w-72 h-32 lg:w-60 lg:h-40 border-1 mt-4"
+      class="rounded-md px-2 pt-2 placeholder:italicborder-gray-300 w-72 h-32 lg:w-60 lg:h-40 border-1 mt-4"
       placeholder="Write a Description"
       v-model="description"
       type="text"

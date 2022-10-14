@@ -6,7 +6,9 @@
         class="flex flex-wrap md:items-center md:justify-between justify-center"
       >
         <div class="w-full md:w-4/12 px-4">
-          <div class="text-sm text-white font-semibold py-1">
+          <div
+            class="text-sm text-white font-semibold py-1 lg:pl-0 md:pl-0 pl-16"
+          >
             Copyright ©
             <a
               href="https://github.com/SoySkate"

@@ -38,21 +38,21 @@
 
     <div class="flex justify-evenly gap-1 py-4">
       <button
-        class="hover:bg-[#A60303] rounded px-2 hover:text-white py-1 border px-6 border-black"
+        class="hover:bg-[#A60303] rounded px-2 hover:text-white py-1 border border-black"
         @click="deleteT"
       >
         Delete 🗑️
       </button>
       <button
         v-if="!readyForEdit"
-        class="hover:bg-[#034AA6] rounded px-2 hover:text-white py-1 border px-6 border-black"
+        class="hover:bg-[#034AA6] rounded px-2 hover:text-white py-1 border border-black"
         @click="permitEdit"
       >
         Edit 📝
       </button>
       <button
         v-if="readyForEdit"
-        class="bg-[#034AA6] rounded px-2 text-white border-2 hover:border-black py-1 border px-6 border-black"
+        class="bg-[#034AA6] rounded px-2 text-white border-2 hover:border-black py-1 border-black"
         @click="editTask"
       >
         Commit Changes
