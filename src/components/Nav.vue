@@ -1,14 +1,14 @@
 <template>
   <div>
-    <nav class="mb-4">
+    <nav class="">
       <div class="flex justify-between py-2 bg-[#354733]">
         <img
-          class="ml-2 lg:ml-8 w-20 h-12"
+          class="ml-2 lg:ml-16 w-20 h-12"
           src="../../public/todo.png"
           alt="Logo To Do"
         />
         <button
-          class="mr-2 lg:mr-8 bg-white rounded-md py-2 px-4 mx-4 border border-slate-200 hover:bg-[#D8DBCC]"
+          class="mr-2 lg:mr-14 bg-white rounded-md py-2 px-4 mx-4 border border-slate-200 hover:bg-[#D8DBCC]"
           @click="signOut"
         >
           Sign Out

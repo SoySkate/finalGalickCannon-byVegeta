@@ -2,6 +2,9 @@
   <div class="bg-[url('/blat.jpg')] min-h-screen">
     <div class="flex justify-center items-center pt-32">
       <div class="w-full max-w-xs">
+        <p class="flex justify-center mb-5">
+          <img src="../../public/blackLogo.png" alt="logo" />
+        </p>
         <form
           @submit.prevent="signUp"
           class="bg-[#8A9B6E] shadow-2xl rounded-2xl px-8 pt-6 pb-8 mb-4"
@@ -77,6 +80,7 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import PersonalRouter from "./PersonalRouter.vue";
 import { useUserStore } from "../stores/user";
+import Nav from "./Nav.vue";
 
 // Route Variables
 const route = "/auth/login";

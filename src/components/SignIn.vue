@@ -5,6 +5,9 @@
         <p v-if="errorMsg" class="">
           {{ errorMsg }}
         </p>
+        <p class="flex justify-center mb-5">
+          <img src="../../public/blackLogo.png" alt="logo" />
+        </p>
         <form
           @submit.prevent="signIn"
           class="bg-[#8A9B6E] shadow-2xl rounded-2xl px-8 pt-6 pb-8 mb-4"
@@ -84,6 +87,7 @@ import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
+import Nav from "./Nav.vue";
 
 // Route Variables
 const route = "/auth/sign-up";

@@ -15,7 +15,7 @@
     >
       <div class="ml-14 md:ml-0 md:mt-10 sm:ml-0 sm:mt-10 lg:ml-0"></div>
       <div
-        class="pb-8 pt-4 lg:pt-1 sm:font-bold text-2xl md:font-bold lg:text-2xl text-black lg:mt-12"
+        class="pb-8 pt-4 lg:pt-1 sm:font-bold text-2xl md:font-bold lg:text-2xl text-black lg:mt-12 md:mt-12"
       >
         New Task
       </div>
@@ -43,7 +43,7 @@
     />
     <br />
     <button
-      class="bg-[#E89A54] rounded-md mb-6 px-8 py-2 mt-5 text-black transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-orange-500 duration-300"
+      class="bg-[#ED8C39] rounded-md mb-6 px-8 py-2 mt-5 text-black transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#FFAF36] duration-300"
       @click="newTask"
     >
       + Add Task
@@ -65,16 +65,16 @@ async function newTask() {
   title.value = "";
   description.value = "";
   emit("refreshList");
-  if (window.innerWidth < 500) {
+  if (window.innerWidth < 600) {
     taskButton.value = false;
   }
 }
 function prueba() {
   console.log(window.innerWidth);
-  if (window.innerWidth > 500) {
+  if (window.innerWidth > 600) {
     taskButton.value = true;
     desktopView.value = true;
-  } else if (window.innerWidth < 500) {
+  } else if (window.innerWidth < 600) {
     taskButton.value = false;
     desktopView.value = false;
   }
