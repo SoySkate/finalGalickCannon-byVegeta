@@ -53,7 +53,7 @@
       <button
         v-if="readyForEdit"
         class="bg-[#034AA6] rounded px-2 text-white border-2 hover:border-black py-1 border-black"
-        @click="editTask"
+        @click="editTask" 
       >
         Commit Changes
       </button>

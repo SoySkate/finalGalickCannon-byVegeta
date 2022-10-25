@@ -8,7 +8,7 @@
   </button>
   <div
     v-else
-    class="bg-[#8A9B6E] rounded-2xl md:w-80 lg:w-80 mx-4 lg:h-auto justify-center"
+    class="z-50 bg-[#8A9B6E] rounded-2xl md:w-80 lg:w-80 mx-4 lg:h-auto justify-center"
   >
     <div
       class="flex lg:justify-center sm:justify-center md:justify-center justify-between"
@@ -66,7 +66,7 @@ async function newTask() {
   description.value = "";
   emit("refreshList");
   if (window.innerWidth < 600) {
-    taskButton.value = false;
+    taskButton.value =!taskButton.value;
   }
 }
 function prueba() {
