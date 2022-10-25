@@ -4,7 +4,7 @@
     <div class="min-h-screen">
       <div class="md:flex md:justify-evenly md:px-14 lg:px-22">
         <div
-          class="top-16 lg:top-24 md:top-24 text-center mb-2 rounded-md h-16 lg:w-1/3 bg-[#F2F0EB]"
+          class="sticky top-16 lg:top-24 md:top-24 text-center mb-2 rounded-md h-16 lg:w-1/3 bg-[#F2F0EB]"
         >
           <NewTask @refreshList="listTasks" class="mb-4" />
           <a
