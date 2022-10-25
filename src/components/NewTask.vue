@@ -8,7 +8,7 @@
   </button>
   <div
     v-else
-    class="z-50 bg-[#8A9B6E] rounded-2xl md:w-80 lg:w-80 mx-4 lg:h-auto justify-center"
+    class="bg-[#8A9B6E] rounded-2xl z-100 md:w-80 lg:w-80 mx-4 lg:h-auto justify-center"
   >
     <div
       class="flex lg:justify-center sm:justify-center md:justify-center justify-between"

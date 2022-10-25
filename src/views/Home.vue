@@ -6,7 +6,7 @@
         <div
           class="sticky top-16 lg:top-24 md:top-24 text-center mb-2 rounded-md h-16 lg:w-1/3 bg-[#F2F0EB]"
         >
-          <NewTask @refreshList="listTasks" class="mb-4" />
+          <NewTask @refreshList="listTasks" class="mb-4 z-100" />
           <a
             class="border ml-4 lg:mr-4 border-black rounded-md mb-6 md:px-8 px-4 py-2 mt-5 text-black transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#354733] hover:text-white duration-300"
             href="#doneButton"
