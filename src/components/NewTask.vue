@@ -66,7 +66,7 @@ async function newTask() {
   description.value = "";
   emit("refreshList");
   if (window.innerWidth < 600) {
-    taskButton.value =!taskButton.value;
+    taskButton.value = false;
   }
 }
 function prueba() {
